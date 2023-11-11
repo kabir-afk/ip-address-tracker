@@ -28,12 +28,13 @@ function App() {
         } = data;
         setLat(latitude);
         setLong(longitude);
-        console.log(data,{Lat},{Long});
+        console.log(data,{Lat,Long});
       }, [])
       .catch((error) => console.error("Unable to fetch data"));
   });
   return (
     <>
+    <div>{Lat}</div>
       <input type="text" id="ipAddress-input" onChange={handleData} />
       <MapContainer
         center={[Lat, Long]}
