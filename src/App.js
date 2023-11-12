@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import L from "leaflet";
 
 function App() {
   const [Lat, setLat] = useState(28);
   const [Long, setLong] = useState(77);
-
-  const [ipAddress, setIpAddress] = useState("27.62.208.19");
+  // const [ipAddress, setIpAddress] = useState("27.62.208.19");
+  const [ipAddress, setIpAddress] = useState("");
   const handleData = (e) => {
     setIpAddress(e.target.value);
   };
@@ -34,11 +35,11 @@ function App() {
   });
   return (
     <>
-    <div>{Lat}</div>
+    <div>Latitude is {Lat} and Longitude is {Long}</div>
       <input type="text" id="ipAddress-input" onChange={handleData} />
       <MapContainer
         center={[Lat, Long]}
-        zoom={10}
+        zoom={5}
         scrollWheelZoom={false}
         style={{
           width: 500,
@@ -49,7 +50,7 @@ function App() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[Lat, Long]}>
+        <Marker position={[Lat, Long]} icon={L.icon({ iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png' })}>
           <Popup>
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
