@@ -1,17 +1,61 @@
-import Map from '../Map/Map';
-import SearchBar from '../SearchBar/SearchBar';
-import { useState } from 'react';
+import { useState, useEffect } from "react";
+import Map from "../Map/Map";
+import SearchBar from "../SearchBar/SearchBar";
+import Details from "../Details/Details";
+
 export default function App() {
+  const [Pos, setPos] = useState({
+    latitude: "",
+    longitude: "",
+  });
+  const [details, setDetails] = useState({
+    cityName: "",
+    ipAddress: "",
+    regionName: "",
+    timeZone: "",
+    zipCode: "",
+  });
   const [ipAddress, setIpAddress] = useState("");
   const handleData = (userInput) => {
     setIpAddress(userInput);
   };
   let url = `https://freeipapi.com/api/json/${ipAddress}`;
 
-  return(
+  useEffect(() => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        const {
+          cityName,
+          ipAddress,
+          latitude,
+          longitude,
+          regionName,
+          timeZone,
+          zipCode,
+        } = data;
+        setPos({ latitude, longitude });
+        setDetails({
+          ipAddress,
+          cityName,
+          regionName,
+          timeZone,
+          zipCode,
+        });
+      })
+      .catch((error) => console.error("Unable to fetch data"));
+  }, [url]);
+  return (
     <main>
-      <SearchBar handleData = {handleData}/>
-      <Map url={url}/>
+      <h1>IP Address Tracker</h1>
+      <SearchBar handleData={handleData} />
+      <Details
+        ipAddress={details.ipAddress}
+        loc={{ regionName: details.regionName, cityName: details.cityName }}
+        timeZone={details.timeZone}
+        Zip={details.zipCode}
+      />
+      <Map url={url} Lat={Pos.latitude} Lng={Pos.longitude} />
     </main>
-  )
+  );
 }
