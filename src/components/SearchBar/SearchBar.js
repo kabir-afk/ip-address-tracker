@@ -1,6 +1,8 @@
+import './SearchBar.css';
+
 export default function SearchBar(props) {
   return (
-    <>
+    <div className='search-bar'>
       <input
         type="text"
         id="ipAddress-input"
@@ -9,6 +11,7 @@ export default function SearchBar(props) {
           props.handleData(e.target.value);
         }}
       />
-    </>
+      <button type="submit"><img src="/images/icon-arrow.svg" alt="arrow-icon" /></button>
+    </div>
   );
 }

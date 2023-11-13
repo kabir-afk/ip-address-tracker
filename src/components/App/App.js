@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Map from "../Map/Map";
 import SearchBar from "../SearchBar/SearchBar";
 import Details from "../Details/Details";
+import "./App.css";
 
 export default function App() {
   const [Pos, setPos] = useState({
@@ -14,13 +15,13 @@ export default function App() {
     regionName: "",
     timeZone: "",
     zipCode: "",
+    countryName:""
   });
   const [ipAddress, setIpAddress] = useState("");
   const handleData = (userInput) => {
     setIpAddress(userInput);
   };
   let url = `https://freeipapi.com/api/json/${ipAddress}`;
-
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
@@ -33,6 +34,7 @@ export default function App() {
           regionName,
           timeZone,
           zipCode,
+          countryName
         } = data;
         setPos({ latitude, longitude });
         setDetails({
@@ -41,7 +43,9 @@ export default function App() {
           regionName,
           timeZone,
           zipCode,
+          countryName
         });
+        console.log(data);
       })
       .catch((error) => console.error("Unable to fetch data"));
   }, [url]);
@@ -54,6 +58,7 @@ export default function App() {
         loc={{ regionName: details.regionName, cityName: details.cityName }}
         timeZone={details.timeZone}
         Zip={details.zipCode}
+        countryName = {details.countryName}
       />
       <Map url={url} Lat={Pos.latitude} Lng={Pos.longitude} />
     </main>

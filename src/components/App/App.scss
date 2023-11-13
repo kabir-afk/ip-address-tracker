@@ -1,1 +1,20 @@
-#map { height: 180px; }
+*,*::before,*::after{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+html{
+    overflow: hidden;
+}
+body{
+    height: 100vh;
+    background: url('/public/images/pattern-bg-desktop.png') no-repeat;
+    font-family: 'Rubik',sans-serif;
+}
+h1{
+    // border: 2px solid red;
+    margin: 5vh auto 0;
+    width: fit-content;
+    color: white;
+    font-weight: 500;
+}

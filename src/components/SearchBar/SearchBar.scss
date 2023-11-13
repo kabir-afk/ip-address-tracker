@@ -1,0 +1,38 @@
+.search-bar {
+    position: relative;
+    margin: 4vh auto;
+    width: 35%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    padding: 1em;
+    font-size: 1.125rem;
+    font-family: inherit;
+    color: hsl(0, 0%, 17%);
+
+    &::placeholder {
+        color: hsl(0, 0%, 59%);
+    }
+}
+
+button {
+    background-color: black;
+    height: 100%;
+    padding: 1.25em;
+    position: absolute;
+    transform: translateX(-100%);
+    &:hover{
+        opacity: 0.75;
+    }
+}
