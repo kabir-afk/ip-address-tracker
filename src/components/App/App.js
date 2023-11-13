@@ -45,7 +45,7 @@ export default function App() {
           zipCode,
           countryName
         });
-        console.log(data);
+        // console.log(data);
       })
       .catch((error) => console.error("Unable to fetch data"));
   }, [url]);

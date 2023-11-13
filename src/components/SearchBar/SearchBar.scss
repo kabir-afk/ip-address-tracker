@@ -1,6 +1,6 @@
 .search-bar {
     position: relative;
-    margin: 4vh auto;
+    margin: 4vh auto 0;
     width: 35%;
     border-radius: 10px;
     overflow: hidden;
@@ -15,6 +15,7 @@ button {
 }
 
 input {
+    border-radius: 10px;
     width: 100%;
     padding: 1em;
     font-size: 1.125rem;
@@ -32,7 +33,29 @@ button {
     padding: 1.25em;
     position: absolute;
     transform: translateX(-100%);
-    &:hover{
+
+    &:hover {
         opacity: 0.75;
     }
+}
+
+.validation-msg {
+    background-color: white;
+    padding: 0.2em 1em;
+    border-radius: 5px;
+    width: 35%;
+    margin: 0.5em auto 4vh;
+    font-size: 0.75rem;
+    color: red;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.unhide {
+    visibility: visible;
+}
+.red{
+    border: 2px solid red;
 }
