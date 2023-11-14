@@ -7,6 +7,12 @@
   padding: 1.25em 0;
   border-radius: 15px;
 }
+@media screen and (max-width: 890px) {
+  .details {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 .detail {
   border-right: 1px solid hsl(0, 0%, 59%);
@@ -18,10 +24,39 @@
 .detail:last-child {
   border: none;
 }
+@media screen and (max-width: 1160px) {
+  .detail {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 890px) {
+  .detail {
+    border-right: none;
+  }
+}
+.detail span {
+  display: block;
+}
+@media screen and (max-width: 890px) {
+  .detail span {
+    display: inline;
+  }
+}
 
 .heading {
   font-size: 1rem;
   text-transform: uppercase;
   color: hsl(0, 0%, 59%);
   letter-spacing: 2px;
+}
+@media screen and (max-width: 1160px) {
+  .heading {
+    font-size: 0.75rem;
+  }
+}
+@media screen and (max-width: 890px) {
+  .heading {
+    font-weight: 700;
+    text-align: center;
+  }
 }/*# sourceMappingURL=Details.css.map */

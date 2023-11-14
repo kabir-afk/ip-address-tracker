@@ -1,9 +1,18 @@
+@mixin mobile(){
+    @media screen and (max-width:890px){
+        @content
+    }
+}
+
 .search-bar {
     position: relative;
     margin: 4vh auto 0;
     width: 35%;
     border-radius: 10px;
     overflow: hidden;
+    @include mobile(){
+        width: 80%;
+    }
 }
 
 input,
