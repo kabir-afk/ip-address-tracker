@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-html {
-  overflow: hidden;
-}
-
 body {
   height: 100vh;
   background: url("/public/images/pattern-bg-desktop.png") no-repeat;
