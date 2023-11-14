@@ -4,4 +4,9 @@
   position: absolute;
   top: 280px;
   z-index: -1;
+}
+@media screen and (max-width: 890px) {
+  #map {
+    height: 650px;
+  }
 }/*# sourceMappingURL=Map.css.map */

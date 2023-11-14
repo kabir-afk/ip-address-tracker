@@ -4,4 +4,7 @@
     position: absolute;
     top: 280px;
     z-index: -1;
+    @media screen and (max-width:890px){
+        height: 650px;
+    }
 }

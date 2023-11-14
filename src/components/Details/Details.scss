@@ -21,11 +21,12 @@
     @include mobile(){
         flex-direction: column;
         align-items: center;
+        // height: 325px;
     }
 }
 
 .detail {
-    // border: 2px solid red;
+    border: 2px solid red;
     border-right: 1px solid hsl(0, 0%, 59%);
     color: hsl(0, 0%, 17%);
     font-size: 2rem;
@@ -33,12 +34,18 @@
     padding: 0 1em;
     &:last-child{
         border: none;
+        @include mobile(){
+            margin-bottom: 0;
+        }
     }
     @include smaller-viewports(){
+        text-align: center;
         font-size: 1.5rem;
     }
     @include mobile(){
         border-right: none;
+        margin-bottom: 1em;
+        
     }
     span{
         // border: 2px solid red;
@@ -50,6 +57,7 @@
 }
 
 .heading {
+    // border: 2px solid red;
     font-size: 1rem;
     text-transform: uppercase;
     color: hsl(0, 0%, 59%);
@@ -60,5 +68,7 @@
     @include mobile(){
         font-weight: 700;
         text-align: center;
+        padding-bottom: 0.5em;
+
     }
 }
