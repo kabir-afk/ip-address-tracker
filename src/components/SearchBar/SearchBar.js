@@ -24,7 +24,7 @@ export default function SearchBar(props) {
           className={error.border}
         />
         <button type="submit">
-          <img src="/images/icon-arrow.svg" alt="arrow-icon" />
+          <img src="images/icon-arrow.svg" alt="arrow-icon" />
         </button>
       </div>
       <div className={`validation-msg ${error.errorMsg}`}>
