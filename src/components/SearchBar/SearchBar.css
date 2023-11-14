@@ -8,7 +8,6 @@
 @media screen and (max-width: 890px) {
   .search-bar {
     width: 80%;
-    height: 80%;
   }
 }
 
@@ -33,6 +32,11 @@ input::-moz-placeholder {
 }
 input::placeholder {
   color: hsl(0, 0%, 59%);
+}
+@media screen and (max-width: 890px) {
+  input {
+    font-size: 12px;
+  }
 }
 
 button {
