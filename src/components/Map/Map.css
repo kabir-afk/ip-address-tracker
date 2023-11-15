@@ -2,8 +2,8 @@
   width: 100vw;
   height: 500px;
   position: absolute;
+  z-index: 1;
   top: 280px;
-  z-index: -1;
 }
 @media screen and (max-width: 890px) {
   #map {

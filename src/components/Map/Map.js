@@ -7,7 +7,7 @@ export default function Map(props) {
     let{Lat,Lng} = props;
     function ChangeView({ center }) {
       const map = useMap();
-      map.setView(center);
+      map.flyTo(center);
       return null;
   }
   return (
